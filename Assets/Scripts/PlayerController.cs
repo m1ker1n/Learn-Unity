@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public struct Bounds
-{
-    public float lower;
-    public float upper;
-}
-
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;

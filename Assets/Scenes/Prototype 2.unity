@@ -648,9 +648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9893823834d6d044b31ae5ff3f3af76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosLeft: -25
-  spawnPosTop: 20
-  spawnPosRight: 25
+  spawnPosLeft: -23
+  spawnPosTop: 15
+  spawnPosRight: 23
   animalPrefabs:
   - {fileID: 4645367260943109877, guid: 90c8c85494c67864da37e5f7e06a26b7, type: 3}
   - {fileID: 5875603458103178137, guid: 5fdaf0a268c3f4e4fae1abd30d23305a, type: 3}
