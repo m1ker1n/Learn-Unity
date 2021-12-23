@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    public bool isPlayer = false;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isPlayer)
-        {
-            Debug.Log("Game Over!!! Player died of Stampede");
-            Destroy(other.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
+        Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }
