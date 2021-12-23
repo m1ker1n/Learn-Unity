@@ -1,10 +1,8 @@
 # Learn Unity
  Learn Unity. Project 2. Junior programmer pathway
  
- Development branch.
+ Master branch.
  
- What need to do:
- - Easy: Vertical player movement : done
- - Medium: Aggressive animals : done
- - Hard: Game user interface
- - Expert: Animal hunger bar
+ Features:
+ - Easy: Vertical player movement 
+ - Medium: Aggressive animals 
