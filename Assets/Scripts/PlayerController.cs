@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public struct Bounds
+{
+    public float lower;
+    public float upper;
+}
+
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
@@ -12,7 +19,12 @@ public class PlayerController : MonoBehaviour
     public Bounds zBounds = new Bounds { lower = -1.5f, upper = 16.0f };
 
     public GameObject projectilePrefab;
-    public Vector3 projectileSpawnPos;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         //launch a projectile from the player
         Debug.Log("Space pressed");
-        Instantiate(projectilePrefab, projectileSpawnPos+transform.position, projectilePrefab.transform.rotation);
+        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
     }
 
     private void Move()
