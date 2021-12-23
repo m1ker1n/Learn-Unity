@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1951475142227304639}
   - component: {fileID: 1144439102901665288}
   - component: {fileID: 5022101682043684080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Food_Sandwich_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
