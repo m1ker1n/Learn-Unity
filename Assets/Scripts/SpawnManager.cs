@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public bool enableSpawn = true;
+
     enum SpawnPosType
     {
         Left,
@@ -28,6 +30,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnInterval = 1.5f;
 
     public GameObject[] animalPrefabs;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnRandomAnimal()
     {
+        if (!enableSpawn) return;
         SpawnPosType type = (SpawnPosType)Random.Range(0, 3);
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = CreateSpawnPos(type);
@@ -68,7 +72,8 @@ public class SpawnManager : MonoBehaviour
                 break;
         }
         prefab.transform.eulerAngles = newEulerAngle;
-        Instantiate(prefab, spawnPos, prefab.transform.rotation);
+        GameObject animal = Instantiate(prefab, spawnPos, prefab.transform.rotation);
+        animal.GetComponent<DestroyOutOfBounds>().player = player;
     }
 
     private Vector3 CreateSpawnPos(SpawnPosType type)

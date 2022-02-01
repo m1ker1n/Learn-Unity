@@ -5,18 +5,23 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour
 {
     public bool isPlayer = false;
+    public GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
         if (isPlayer)
         {
-            Debug.Log("Game Over!!! Player died of Stampede");
+            gameObject.GetComponent<ScoreManager>().Decrement();
+            gameObject.GetComponent<HealthManager>().Decrement();
             Destroy(other.gameObject);
         }
-        else
+        else //gameObject is projectile
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            Debug.Log("You fed a pet");
+            other.gameObject.GetComponent<HungerManager>().Feed();
+            player.GetComponent<ScoreManager>().Increment();
         }
     }
 }
