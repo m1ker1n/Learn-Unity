@@ -7,5 +7,5 @@
  What need to do:
  - Easy: Vertical player movement : done
  - Medium: Aggressive animals : done
- - Hard: Game user interface
+ - Hard: Game user interface : done
  - Expert: Animal hunger bar

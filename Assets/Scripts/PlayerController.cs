@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
     private void LaunchProjectile()
     {
         //launch a projectile from the player
-        Debug.Log("Space pressed");
-        Instantiate(projectilePrefab, projectileSpawnPos+transform.position, projectilePrefab.transform.rotation);
+        //Debug.Log("Space pressed");
+        GameObject proj = Instantiate(projectilePrefab, projectileSpawnPos+transform.position, projectilePrefab.transform.rotation);
+        proj.GetComponent<DetectCollision>().player = gameObject;
     }
 
     private void Move()
