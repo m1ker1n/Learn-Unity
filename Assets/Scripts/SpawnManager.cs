@@ -15,12 +15,14 @@ public class SpawnManager : MonoBehaviour
 
     SpawnPosType fromWhere;
     public float spawnPosLeft = -23.0f;
-    public float spawnPosTop = 15.0f;
+    public float spawnPosTop = 16.0f;
     public float spawnPosRight = 23.0f;
+    public float spawnPosBottom = 0.0f;
 
-    public Bounds leftBounds = new Bounds { lower = -1.5f, upper = 16.0f };
-    public Bounds topBounds = new Bounds { lower = -23.0f, upper = 23.0f };
-    public Bounds rightBounds = new Bounds { lower = -1.5f, upper = 16.0f };
+
+    public Bounds leftBounds;
+    public Bounds topBounds;
+    public Bounds rightBounds;
 
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
@@ -30,6 +32,11 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        leftBounds = new Bounds { lower = spawnPosBottom, upper = spawnPosTop };
+        topBounds = new Bounds { lower = spawnPosLeft, upper = spawnPosRight };
+        rightBounds = new Bounds { lower = spawnPosBottom, upper = spawnPosTop };
+
+
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
     }
 
